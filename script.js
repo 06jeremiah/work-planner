@@ -19,4 +19,5 @@ $(".save").on("click",function(){
     var timeblock =btnid.split("-")[0]
     var value = $(`#${timeblock}-input`).val()
     console.log(btnid,timeblock,value)
+    localStorage.setItem(timeblock,value)
 })
