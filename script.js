@@ -21,3 +21,7 @@ $(".save").on("click",function(){
     console.log(btnid,timeblock,value)
     localStorage.setItem(timeblock,value)
 })
+for(let i= 9; i<= 17;i++){
+    var data = localStorage.getItem(i)
+    $(`#${i}-input`).val(data)
+}
