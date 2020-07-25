@@ -21,7 +21,21 @@ $(".save").on("click",function(){
     console.log(btnid,timeblock,value)
     localStorage.setItem(timeblock,value)
 })
+var currenttime= moment().hours()
+console.log(currenttime)
 for(let i= 9; i<= 17;i++){
     var data = localStorage.getItem(i)
     $(`#${i}-input`).val(data)
+    if (i>currenttime){
+        $(`#${i}-input`).addClass("bg-warning")
+
+    }
+    else if( i == currenttime){
+        $(`#${i}-input`).addClass("bg-secondary")
+    }
+    else{
+        $(`#${i}-input`).addClass("bg-info")
+    }
+
+    
 }
